@@ -4,7 +4,7 @@ RUN apt-get update && apt-get install -y \ python3.10 \ python3-pip \ python3-pi
 
 RUN pip3 install PyYAML
 
-COPY index-html /usr/bin/index.html
+COPY index.html /usr/bin/index.html
 
 COPY entrypoint.sh /entrypoint.sh
 
