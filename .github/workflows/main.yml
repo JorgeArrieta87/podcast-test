@@ -7,8 +7,15 @@ permissions:
   contents: read
   pages: write
   id-token: write
-jobs: 
-  build:
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+jobs:
+  deploy:
+    environment:
+      name: test
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps: 
      - name: check out repo
